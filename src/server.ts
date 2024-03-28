@@ -1,19 +1,25 @@
 import fastify from 'fastify'
+import crypto from 'node:crypto'
 import { knex } from './database'
 
 const app = fastify()
-
-// GET, POST, PUT, PATCH, DELETE
+const port = 3333
 
 app.get('/hello', async () => {
-  const tables = await knex('sqlite_chema').select('*')
-  return tables
+  const transaction = await knex('transactions')
+    .insert({
+      id: crypto.randomUUID(),
+      title: 'Transação Completa',
+      amount: 1000,
+    })
+    .returning('*')
+  return transaction
 })
 
 app
   .listen({
-    port: 3333,
+    port,
   })
   .then(() => {
-    console.log('Server is running on port 3333')
+    console.log(`Server is running on port ${port}`)
   })
