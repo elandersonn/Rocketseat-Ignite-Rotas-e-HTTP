@@ -1,3 +1,4 @@
 node_modules
-tmp/app.db
-migrations
+db/app.db
+db/migrations
+dist
