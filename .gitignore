@@ -1,5 +1,5 @@
 node_modules
+db
 db/app.db
 db/migrations
-db
 dist
