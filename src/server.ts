@@ -16,7 +16,7 @@ app.register(fastifyStatic, {
 });
 
 app.post('/login', async (req, res) => {
-  const { username, password } = req.body;
+  const { username, password }: any = req.body;
 
   const hash = crypto.createHash('sha256');
   hash.update(password);
