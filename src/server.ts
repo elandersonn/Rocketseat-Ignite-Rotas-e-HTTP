@@ -34,7 +34,7 @@ app.post('/user', async (req, res) => {
 });
 
 app.get('/user', async (req, res) => {
-  const {username, password}: any = req.body
+  const { username, password }: any = req.body
   if (!username || !password) {
     return res.code(400).send({ message: 'Missing username or password' });
   }
@@ -44,9 +44,9 @@ app.get('/user', async (req, res) => {
   const encryptedPassword = hash.digest('hex');
 
   const user = await knex('users')
-    .where({ username }) 
-    .andWhere('encrypted_password', encryptedPassword) 
-    .first(); 
+    .where({ username })
+    .andWhere('encrypted_password', encryptedPassword)
+    .first();
 
   if (!user) {
     return res.code(404).send({ message: 'User not found' });
@@ -66,8 +66,10 @@ app.delete('/users', async () => {
 })
 
 app.post('/check-captcha', async (req, res) => {
-  const {captchaText, captchaInput}: any = req.body
+  const { captchaText, captchaInput }: any = req.body
+  console.log(captchaInput, captchaText)
   const isValid = captchaInput ? captchaInput === captchaText : false
+  console.log(isValid)
 
   return isValid
 })

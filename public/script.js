@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
   const loginForm = document.getElementById("login-form");
-  const forgotPasswordForm = document.getElementById("forgot-password-form");
+  //const forgotPasswordForm = document.getElementById("forgot-password-form");
 
   loginForm.addEventListener("submit", handleLogin);
   forgotPasswordForm.addEventListener("submit", handleForgotPassword);
@@ -11,14 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const captchaInput = document.getElementById("captcha").value;
     const captchaText = document.getElementById("captcha-text").textContent;
     const captchaCheck = await checkCaptcha(captchaInput, captchaText);
-    if (!captchaCheck) {
+    if (captchaCheck == false) {
       return;
     }
 
     const username = document.getElementById("username").value;
     const password = document.getElementById("password").value;
     const validationResult = validatePassword(password);
-    if (!validationResult) {
+    if (validationResult == false) {
       return;
     }
 
