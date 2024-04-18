@@ -29,6 +29,7 @@
     "fastify": "3.x",
     "fastify-static": "^4.7.0",
     "knex": "^3.1.0",
+    "nodemailer": "^6.9.13",
     "yarn": "^1.22.22"
   }
 }
