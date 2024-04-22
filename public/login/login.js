@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async function () {
   const loginForm = document.getElementById("login-form");  
   loginForm.addEventListener("submit", handleLogin);
+  document.getElementById("login-form").value = generateNewCaptcha(); 
 
   async function handleLogin(event) {
     event.preventDefault();
@@ -8,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const captchaInput = document.getElementById("captcha").value;
     const captchaText = document.getElementById("captcha-text").textContent;
     const captchaCheck = await checkCaptcha(captchaInput, captchaText);
-    if (captchaCheck == false) {
+    if (captchaCheck === false) {
       return;
     }
 
@@ -88,7 +89,7 @@ async function checkCaptcha(captchaInput, captchaText) {
     body: JSON.stringify({ captchaInput, captchaText }),
   });
   const serverResponse = await response.json();
-  if (serverResponse.valid) {
+  if (!serverResponse) {
     alert("Código CAPTCHA incorreto. Tente novamente.");
     generateNewCaptcha();
     return false;

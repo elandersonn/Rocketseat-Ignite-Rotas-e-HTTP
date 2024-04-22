@@ -1,107 +1,113 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Courstard', sans-serif;
-    background-color: #f9f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-image: linear-gradient(45deg, #e6cfe6, #f9f4f8, #e6cfe6);
-    background-size: 200% 200%;
-  }
-  
-  .login-container {
-    background-color: #e6cfe6;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 400px;
-    text-align: center;
-  }
-  
-  h1 {
-    font-size: 24px;
-    color: #6b3e6f;
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    font-size: 14px;
-    color: #6b3e6f;
-    margin-bottom: 5px;
-     
-  }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .captcha-container {
-    display: flexbox;
-    flex-direction: column; 
-  }
-  
-  .captcha-container input {
-    margin-bottom: 5px; /* Reduce spacing between inputs */
-  }
-  
-  .captcha-container button {
-    margin-top: 5px; /* Remove default margin above button */
-    padding: 5px 10px; /* Reduce button padding */
-  }
+body {
+  font-family: "Courstard", sans-serif;
+  background-color: #f9f4f8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(45deg, #e6cfe6, #f9f4f8, #e6cfe6);
+  background-size: 200% 200%;
+}
 
-  .unselectable {
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Chrome/Konqueror */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE/Edge */
-    user-select: none;
-  }  
-  
-  button {
-    background-color: #6b3e6f;
-    color: #fff;
-    padding: 10px 20px; /* Increased horizontal padding for better spacing */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 10px; /* Added margin for spacing between form and button */
-  }
-  
-  button:hover {
-    background-color: #4c2a4f;
-  }
-  
-  /* Styles for links (Esqueci minha senha and Cadastrar-se) */
-  .links {
-    display: flex; /* Use flexbox for positioning */
-    justify-content: space-between; /* Distribute links evenly */
-    align-items: center; /* Align links vertically */
-    margin-top: 10px; /* Added margin for spacing above links */
-  }
-  
-  .links a {
-    color: #6b3e6f; /* Use same color as labels */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease;
-  }
-  
-  .links a:hover {
-    color: #2e1930; /* Change color on hover */
-  }
-  
-  
+.login-container {
+  background-color: #e6cfe6;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 410px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  color: #6b3e6f;
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  color: #6b3e6f;
+  margin-bottom: 5px;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.captcha-container {
+  display: flexbox;
+  flex-direction: column;
+}
+
+.captcha-container input {
+  margin-bottom: 5px; /* Reduce spacing between inputs */
+}
+
+.captcha-container button {
+  margin-top: 5px; /* Remove default margin above button */
+  padding: 5px 10px; /* Reduce button padding */
+}
+
+.unselectable {
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Chrome/Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE/Edge */
+  user-select: none;
+}
+
+button {
+  background-color: #6b3e6f;
+  color: #fff;
+  padding: 10px 20px; /* Increased horizontal padding for better spacing */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px; /* Added margin for spacing between form and button */
+}
+
+button:hover {
+  background-color: #4c2a4f;
+}
+
+/* Styles for links (Esqueci minha senha and Cadastrar-se) */
+.links {
+  display: flex; /* Use flexbox for positioning */
+  justify-content: space-between; /* Distribute links evenly */
+  align-items: center; /* Align links vertically */
+  margin-top: 10px; /* Added margin for spacing above links */
+}
+
+.links a {
+  color: #6b3e6f; /* Use same color as labels */
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #2e1930; /* Change color on hover */
+}
+
+.not-selectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

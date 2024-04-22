@@ -44,6 +44,7 @@ app.post("/login", async (req, res) => {
   hash.update(password);
   const encryptedPassword = hash.digest("hex");
 
+  console.log(username, password, encryptedPassword)
   const user = await knex("users")
     .where("username", username)
     .andWhere("encrypted_password", encryptedPassword)
@@ -68,6 +69,7 @@ app.post("/password-reset", async (req, res) => {
   if (!user) {
     return res.code(404).send({ message: "User not found" });
   }
+
   const newPassword = "12345aA!";
   const hash = crypto.createHash("sha256");
   hash.update(newPassword);
@@ -94,7 +96,6 @@ app.delete("/users", async () => {
 app.post("/check-captcha", async (req, res) => {
   const { captchaText, captchaInput }: any = req.body;
   const isValid = captchaInput ? captchaInput === captchaText : false;
-
   return isValid;
 });
 
